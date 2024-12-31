@@ -26,6 +26,16 @@ public class AnimalController {
     return animalRepository.findAll();
   };
 
+  @GetMapping("/not-adopted")
+  private List<Animal> findByNotAdopted() {
+    return animalRepository.findByNotAdopted();
+  }
+
+  @GetMapping("/adopted")
+  private List<Animal> findByAdopted() {
+    return animalRepository.findByAdopted();
+  }
+
   @PostMapping
   private void save(@RequestBody Animal animal) {
     animalRepository.save(animal);

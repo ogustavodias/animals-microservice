@@ -6,7 +6,8 @@ INSERT INTO
     resume_of_state_at_entry,
     receptionist,
     animal_size,
-    entry_date
+    entry_date,
+    adoption_date
   )
 VALUES
   (
@@ -16,7 +17,8 @@ VALUES
     'Bem',
     'Maria',
     'Pequeno',
-    '2021-01-01'
+    '2021-01-01',
+    null
   ),
   (
     5,
@@ -25,5 +27,16 @@ VALUES
     'Regular',
     'Maria',
     'Grande',
+    '2021-01-01',
+    null
+  ),
+  (
+    5,
+    'Sultao',
+    'Pastor Alemao',
+    'Bem',
+    'Maria',
+    'Grande',
+    '2021-01-01',
     '2021-01-01'
   );
