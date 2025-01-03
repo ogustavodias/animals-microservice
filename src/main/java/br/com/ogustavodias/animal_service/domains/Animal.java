@@ -2,14 +2,28 @@ package br.com.ogustavodias.animal_service.domains;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.DiscriminatorType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "animalType")
+@JsonSubTypes({
+    @JsonSubTypes.Type(value = Dog.class, name = "dog"),
+    @JsonSubTypes.Type(value = Cat.class, name = "cat")
+})
 @Entity
-public class Animal {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "animalType", discriminatorType = DiscriminatorType.STRING)
+public abstract class Animal {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,6 +1,7 @@
 CREATE TABLE
   animal (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    animal_type VARCHAR(255) NOT NULL,
     estimated_age INT NOT NULL,
     provisory_name VARCHAR(255) NOT NULL,
     breed VARCHAR(255) NOT NULL,

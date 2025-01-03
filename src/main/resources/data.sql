@@ -1,5 +1,6 @@
 INSERT INTO
   animal (
+    animal_type,
     estimated_age,
     provisory_name,
     breed,
@@ -11,6 +12,7 @@ INSERT INTO
   )
 VALUES
   (
+    'dog',
     3,
     'Pipoca',
     'Poodle',
@@ -21,6 +23,7 @@ VALUES
     null
   ),
   (
+    'dog',
     5,
     'Bolinha',
     'Husky',
@@ -31,6 +34,7 @@ VALUES
     null
   ),
   (
+    'dog',
     5,
     'Sultao',
     'Pastor Alemao',
@@ -39,4 +43,15 @@ VALUES
     'Grande',
     '2021-01-01',
     '2021-01-01'
+  ),
+  (
+    'cat',
+    5,
+    'Garfield',
+    'Persa',
+    'Bem',
+    'Joao',
+    'Medio',
+    '2021-01-01',
+    null
   );

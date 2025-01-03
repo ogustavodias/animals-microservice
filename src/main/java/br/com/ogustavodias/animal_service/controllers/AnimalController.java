@@ -14,7 +14,7 @@ import br.com.ogustavodias.animal_service.repositorys.AnimalRepository;
 @RestController
 @RequestMapping("/animals")
 public class AnimalController {
-
+  
   private AnimalRepository animalRepository;
 
   public AnimalController(AnimalRepository animalRepository) {
