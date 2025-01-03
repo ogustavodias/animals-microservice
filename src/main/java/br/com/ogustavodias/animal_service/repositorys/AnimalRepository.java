@@ -17,5 +17,5 @@ public interface AnimalRepository extends JpaRepository<Animal, Integer> {
   List<Animal> findByAdopted();
 
   @Query("SELECT COUNT(a) FROM Animal a WHERE a.entryDate BETWEEN :startDate AND :endDate")
-  Integer getTotalRescued(@Param("startDate") LocalDate startDate, @Param("endDate") LocalDate endDate);
+  Integer getTotalRescuedInPeriod(@Param("startDate") LocalDate startDate, @Param("endDate") LocalDate endDate);
 }

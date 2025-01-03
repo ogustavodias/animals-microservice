@@ -40,8 +40,8 @@ public class AnimalController {
     return animalRepository.findByAdopted();
   }
 
-  @GetMapping("/get-total-rescued")
-  private Integer getTotalRescued(
+  @GetMapping("/get-total-rescued-in-period")
+  private Integer getTotalRescuedInPeriod(
       @RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
       @RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate) {
 
@@ -51,7 +51,7 @@ public class AnimalController {
       throw new IllegalArgumentException("The period between the dates must be less than 365 days");
     }
 
-    return animalRepository.getTotalRescued(startDate, endDate);
+    return animalRepository.getTotalRescuedInPeriod(startDate, endDate);
   }
 
   @PostMapping
